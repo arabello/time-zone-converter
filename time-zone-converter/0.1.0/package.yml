@@ -1,0 +1,17 @@
+# Time Zone Converter
+
+name: time-zone-converter
+parent: default
+
+matches:
+  - trigger: ":time"
+    replace: "{{converted}}"
+    vars:
+      - name: form1
+        type: form
+        params:
+          layout: UTC {{time}}+0200 Time
+      - name: converted
+        type: shell
+        params:
+          cmd: "TZ='America/Chicago' date -jf %H:%M%z $ESPANSO_FORM1_TIME+0200 +%H:%M"
