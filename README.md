@@ -19,11 +19,15 @@ To change it, edit the installed package file at `$PACKAGES_PATH/time-zone-conve
 
 E.g. to edit with vim
 
-`vim $(espanso path | grep Packages | cut -d' ' -f2)/time-zone-converter/package.yml`
+```
+vim $(espanso path | grep Packages | cut -d' ' -f2)/time-zone-converter/package.yml
+```
 
 or if you have espanso v2
 
-`espanso edit match/packages/shruggie/package.yml`.
+```
+espanso edit match/packages/shruggie/package.yml
+```
 
 At nearly line `17` (`default: America/Chicago`) replace `America/Chicago` with your default timezone of choice. A list of timezones is avaible in the below lines.
 Alternatively, you can run `sudo systemsetup -listtimezones`.
